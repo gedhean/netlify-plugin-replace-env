@@ -1,10 +1,12 @@
 {
   "name": "netlify-plugin-replace-env",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "Plugin to dynamically replace environment variable strings.",
   "main": "index.js",
   "scripts": {
+    "version": "auto-changelog -p --template keepachangelog && git add CHANGELOG.md",
+    "prepublishOnly": "git push && git push --tags && gh-release",
     "test": "jest"
   },
   "repository": {
@@ -26,6 +28,8 @@
   },
   "homepage": "https://github.com/gedhean/netlify-plugin-replace-env#readme",
   "devDependencies": {
+    "auto-changelog": "^2.3.0",
+    "gh-release": "^6.0.0",
     "jest": "^27.0.5"
   }
 }
