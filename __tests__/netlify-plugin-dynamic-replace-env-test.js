@@ -1,4 +1,4 @@
-import { onPreBuild } from '../index.js';
+const { onPreBuild } = require ('../index.js');
 
 const originalEnv = process.env;
 
