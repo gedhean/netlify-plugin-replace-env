@@ -3,8 +3,15 @@ const { onPreBuild } = require ('../index.js');
 const originalEnv = process.env;
 
 describe('netlify-plugin-dynamic-replace-env plugin', () => {
+  const OLD_ENV = process.env;
+
+  beforeEach(() => {
+    jest.resetModules();
+    process.env = { ...OLD_ENV };
+  });
+
   afterEach(() => {
-    process.env = originalEnv;
+    process.env = OLD_ENV;
   });
 
   it('disabled by default', async () => {
